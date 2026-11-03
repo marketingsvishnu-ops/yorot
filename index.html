@@ -1,784 +1,463 @@
-
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CRICKET WORLD | Sports Magazine</title>
+<title>Habibi247</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+:root{
+  --habibi-burgundy:#830010;
+  --habibi-burgundy-dark:#5f000b;
+  --habibi-border:#dedede;
+  --habibi-page:#f4f4f4;
+  --habibi-text:#292929;
 }
 
-html {
-    scroll-behavior: smooth;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
 }
 
-body {
-    background: #f4f6f8;
-    color: #222;
-    line-height: 1.6;
+body{
+  background:var(--habibi-page);
+  color:var(--habibi-text);
 }
 
-/* HEADER */
-
-header {
-    background: #071b16;
-    color: white;
-    padding: 18px 7%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+.container{
+  display:flex;
+  flex-direction:row-reverse;
+  min-height:100vh;
 }
 
-.logo {
-    font-size: 28px;
-    font-weight: bold;
-    color: #ffca28;
+.demo{
+  width:70%;
+  background:#111;
+  position:relative;
 }
 
-.logo span {
-    color: white;
+iframe{
+  width:100%;
+  height:100vh;
+  border:none;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 12px;
-    font-weight: bold;
-    font-size: 14px;
+.right{
+  width:30%;
+  padding:30px 22px;
+  background:linear-gradient(180deg,#fff,#eeece8);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow-y:auto;
 }
 
-nav a:hover {
-    color: #ffca28;
+.box{
+  width:100%;
+  background:#fff;
+  border:1px solid var(--habibi-border);
+  border-radius:8px;
+  padding:26px 20px;
+  text-align:center;
+  box-shadow:0 8px 28px rgba(48,46,42,.12);
 }
 
-/* HERO */
-
-.hero {
-    min-height: 480px;
-    background:
-    linear-gradient(90deg, rgba(0,0,0,.88), rgba(0,0,0,.25)),
-    url("https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=1600")
-    center/cover;
-    display: flex;
-    align-items: center;
-    padding: 60px 8%;
-    color: white;
+.badge{
+  display:inline-block;
+  background:var(--habibi-burgundy);
+  color:#fff;
+  padding:8px 18px;
+  border-radius:30px;
+  font-weight:800;
+  margin-bottom:16px;
 }
 
-.hero-content {
-    max-width: 650px;
+h1{
+  font-size:34px;
+  color:var(--habibi-burgundy-dark);
+  margin-bottom:10px;
+  text-transform:uppercase;
 }
 
-.hero h1 {
-    font-size: 55px;
-    line-height: 1.15;
-    margin-bottom: 20px;
+.sub{
+  font-size:17px;
+  line-height:1.5;
+  margin-bottom:22px;
+  color:#000;
 }
 
-.hero p {
-    font-size: 18px;
-    margin-bottom: 25px;
+.features{
+  display:grid;
+  gap:12px;
+  margin:22px 0;
 }
 
-.btn {
-    display: inline-block;
-    padding: 13px 27px;
-    background: #ffca28;
-    color: #071b16;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
+.feature{
+  background:linear-gradient(90deg,#f7f6f3,#eeece8);
+  border:1px solid var(--habibi-border);
+  padding:14px;
+  border-radius:14px;
+  font-size:17px;
+  font-weight:700;
 }
 
-.btn:hover {
-    background: white;
+.feature span{
+  color:var(--habibi-burgundy-dark);
 }
 
-/* GENERAL SECTION */
-
-section {
-    padding: 65px 7%;
+/* Signup Button */
+.signup-btn{
+  display:inline-block;
+  margin-top:8px;
+  padding:9px 16px;
+  background:var(--habibi-burgundy);
+  color:#fff;
+  text-decoration:none;
+  border-radius:9px;
+  font-size:15px;
+  font-weight:800;
+  border:1px solid var(--habibi-burgundy-dark);
+  transition:.3s;
 }
 
-.section-title {
-    font-size: 32px;
-    margin-bottom: 10px;
-    color: #092c21;
+.signup-btn:hover{
+  background:var(--habibi-burgundy-dark);
+  transform:scale(1.03);
 }
 
-.section-description {
-    color: #777;
-    margin-bottom: 30px;
+.website-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-top:16px;
+  font-size:14px;
+  font-weight:bold;
 }
 
-/* MATCH CENTER */
-
-.match-section {
-    background: #092c21;
-    color: white;
+.website-row a{
+  text-decoration:none;
 }
 
-.match-section .section-title {
-    color: white;
+.website{
+  color:var(--habibi-burgundy-dark);
 }
 
-.matches {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 22px;
+.whatsapp-small{
+  color:#168a45;
 }
 
-.match-card {
-    background: white;
-    color: #222;
-    padding: 25px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 5px 20px rgba(0,0,0,.15);
+.cta{
+  display:block;
+  background:#25D366;
+  color:#fff;
+  text-decoration:none;
+  padding:17px;
+  border-radius:16px;
+  font-size:20px;
+  font-weight:900;
+  margin-top:22px;
+  box-shadow:0 8px 18px rgba(37,211,102,.35);
+  transition:.3s;
 }
 
-.match-card h3 {
-    color: #0b5139;
-    margin-bottom: 12px;
+.cta:hover{
+  transform:scale(1.03);
+  background:#1ebe5d;
 }
 
-.teams {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 20px 0;
-    font-size: 18px;
-    font-weight: bold;
+/* Floating Signup Button */
+.floating-signup{
+  position:absolute;
+  top:20px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:50;
+  background:var(--habibi-burgundy);
+  color:#fff;
+  padding:12px 24px;
+  border-radius:8px;
+  font-size:18px;
+  font-weight:900;
+  border:3px solid #fff;
+  cursor:pointer;
+  box-shadow:0 8px 20px rgba(32,127,104,.35);
+  transition:.3s;
+  text-decoration:none;
+  display:inline-block;
 }
 
-.vs {
-    color: #ff9800;
+.floating-signup:hover{
+  transform:translateX(-50%) scale(1.08);
+  background:var(--habibi-burgundy-dark);
+  box-shadow:0 12px 25px rgba(32,127,104,.45);
 }
 
-/* NEWS */
-
-.news-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
+.trust{
+  margin-top:16px;
+  color:#555;
+  font-size:14px;
+  line-height:1.5;
 }
 
-.news-card {
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,.08);
-    transition: .3s;
+.footer{
+  margin-top:18px;
+  font-size:12px;
+  color:#666;
+  line-height:1.5;
 }
 
-.news-card:hover {
-    transform: translateY(-7px);
+.bonus-popup{
+  position:fixed;
+  inset:0;
+  z-index:100;
+  display:grid;
+  place-items:center;
+  padding:20px;
+  background:rgba(0,0,0,.78);
 }
 
-.news-card img {
-    width: 100%;
-    height: 210px;
-    object-fit: cover;
+.bonus-popup[hidden]{
+  display:none;
 }
 
-.news-content {
-    padding: 22px;
+.bonus-dialog{
+  position:relative;
+  width:min(100%,420px);
+  padding:34px 24px 28px;
+  border:2px solid var(--habibi-burgundy);
+  border-radius:10px;
+  background:#fff;
+  text-align:center;
+  color:var(--habibi-text);
+  box-shadow:0 18px 60px rgba(0,0,0,.35);
+  animation:popup-enter .24s ease-out;
 }
 
-.category {
-    color: #e67e22;
-    font-weight: bold;
-    font-size: 12px;
-    text-transform: uppercase;
+.bonus-close{
+  position:absolute;
+  top:8px;
+  right:12px;
+  border:0;
+  background:transparent;
+  color:var(--habibi-burgundy-dark);
+  font-size:28px;
+  line-height:1;
+  cursor:pointer;
 }
 
-.news-content h3 {
-    margin: 10px 0;
-    color: #092c21;
+.bonus-dialog h2{
+  margin-bottom:10px;
+  color:var(--habibi-burgundy-dark);
+  font-size:30px;
 }
 
-.read-more {
-    color: #08794f;
-    font-weight: bold;
-    text-decoration: none;
+.bonus-dialog p{
+  margin-bottom:22px;
+  color:#455462;
+  line-height:1.5;
 }
 
-/* PLAYERS */
-
-.players {
-    background: #e9f0ed;
+.bonus-claim{
+  display:block;
+  padding:14px 18px;
+  border-radius:8px;
+  background:var(--habibi-burgundy);
+  color:#fff;
+  font-size:17px;
+  font-weight:800;
+  text-decoration:none;
 }
 
-.player-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-    gap: 20px;
+.bonus-claim:hover{
+  background:var(--habibi-burgundy-dark);
 }
 
-.player-card {
-    background: white;
-    border-radius: 10px;
-    padding: 25px 15px;
-    text-align: center;
+@keyframes popup-enter{
+  from{opacity:0;transform:translateY(10px) scale(.97)}
+  to{opacity:1;transform:translateY(0) scale(1)}
 }
 
-.player-card img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
+@media(prefers-reduced-motion:reduce){
+  .bonus-dialog{animation:none}
 }
 
-.player-card h3 {
-    margin-top: 12px;
-    color: #092c21;
+@media(max-width:768px){
+  .container{
+    flex-direction:column-reverse;
+  }
+
+  .demo,
+  .right{
+    width:100%;
+  }
+
+  iframe{
+    height:500px;
+  }
+
+  .right{
+    padding:20px;
+  }
 }
 
-/* BOOKS */
+@media(max-width:480px){
+  h1{
+    font-size:28px;
+  }
 
-.book-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
-}
+  .sub{
+    font-size:16px;
+  }
 
-.book-card {
-    background: white;
-    padding: 25px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 3px 15px rgba(0,0,0,.08);
-}
+  .feature{
+    font-size:16px;
+    padding:12px;
+  }
 
-.book-cover {
-    height: 210px;
-    width: 140px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 15px;
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    background: linear-gradient(135deg, #075e42, #111);
-    box-shadow: 5px 6px 10px #aaa;
-}
+  .signup-btn{
+    font-size:14px;
+    padding:8px 13px;
+  }
 
-.book-card h3 {
-    margin: 20px 0 8px;
-}
+  .cta{
+    font-size:18px;
+    padding:15px;
+  }
 
-/* BLOG */
-
-.blog-section {
-    background: #fff;
-}
-
-.blog-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 30px;
-}
-
-.blog-article {
-    background: #f6f8f7;
-    padding: 30px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.blog-article h3 {
-    color: #075e42;
-    margin-bottom: 12px;
-}
-
-.sidebar {
-    background: #092c21;
-    color: white;
-    padding: 25px;
-    border-radius: 10px;
-    height: fit-content;
-}
-
-.sidebar h3 {
-    margin-bottom: 15px;
-}
-
-.sidebar a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    padding: 10px 0;
-    border-bottom: 1px solid #47665b;
-}
-
-/* NEWSLETTER */
-
-.newsletter {
-    background: #ffca28;
-    text-align: center;
-}
-
-.newsletter h2 {
-    color: #092c21;
-    margin-bottom: 15px;
-}
-
-.newsletter input {
-    padding: 14px;
-    width: 280px;
-    max-width: 100%;
-    border: none;
-    border-radius: 5px;
-    margin: 8px;
-}
-
-.newsletter button {
-    padding: 14px 25px;
-    border: none;
-    background: #092c21;
-    color: white;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-/* FOOTER */
-
-footer {
-    background: #071b16;
-    color: white;
-    padding: 45px 7%;
-    text-align: center;
-}
-
-footer p {
-    color: #bbb;
-    margin-top: 10px;
-}
-
-.social {
-    margin: 20px;
-}
-
-.social a {
-    color: #ffca28;
-    margin: 10px;
-    text-decoration: none;
-}
-
-/* RESPONSIVE */
-
-@media(max-width: 750px) {
-    header {
-        justify-content: center;
-        gap: 15px;
-    }
-
-    nav {
-        text-align: center;
-    }
-
-    nav a {
-        display: inline-block;
-        margin: 7px;
-    }
-
-    .hero h1 {
-        font-size: 36px;
-    }
-
-    .blog-grid {
-        grid-template-columns: 1fr;
-    }
+  .website-row{
+    flex-direction:column;
+    gap:8px;
+  }
 }
 </style>
+
 </head>
 
 <body>
 
-<!-- HEADER -->
-
-<header>
-    <div class="logo">🏏 CRICKET<span>WORLD</span></div>
-
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#matches">Matches</a>
-        <a href="#news">News</a>
-        <a href="#players">Players</a>
-        <a href="#books">Books</a>
-        <a href="#blog">Blog</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
-
-<!-- HERO -->
-
-<div class="hero" id="home">
-    <div class="hero-content">
-        <h1>THE WORLD OF CRICKET</h1>
-        <p>
-            Your ultimate destination for cricket stories,
-            match coverage, legendary players, sports books,
-            analysis and exciting cricket blogs.
-        </p>
-        <a href="#news" class="btn">EXPLORE CRICKET</a>
-    </div>
+<div class="bonus-popup" id="bonusPopup" role="dialog" aria-modal="true" aria-labelledby="bonusTitle">
+  <div class="bonus-dialog">
+    <button class="bonus-close" id="bonusClose" type="button" aria-label="Close bonus popup">&times;</button>
+    <h2 id="bonusTitle">Bonus Offer</h2>
+    <p>10% Deposit Bonus<br>15% Losing Bonus<br>3% Referral Bonus</p>
+    <a class="bonus-claim" href="https://habibi247.co/clk?src=YMFtLZxvb">Sign Up with Habibi247</a>
+  </div>
 </div>
 
-<!-- MATCH CENTER -->
+<div class="container">
 
-<section class="match-section" id="matches">
-    <h2 class="section-title">🏆 Cricket Match Center</h2>
-    <p class="section-description">
-        Featured match listings – illustrative examples, not live scores.
-    </p>
+  <div class="demo">
+    <a href="https://habibi247.co/clk?src=YMFtLZxvb" target="_blank" rel="noopener noreferrer" class="floating-signup">SIGN UP WITH HABIBI247</a>
+    <iframe src="https://habibi247.co/clk?src=YMFtLZxvb"></iframe>
+  </div>
 
-    <div class="matches">
+  <div class="right">
+    <div class="box">
 
-        <div class="match-card">
-            <h3>INTERNATIONAL CRICKET</h3>
-            <div class="teams">
-                <span>IND 🇮🇳</span>
-                <span class="vs">VS</span>
-                <span>AUS 🇦🇺</span>
-            </div>
-            <p>One Day International</p>
-            <p>Match preview and analysis</p>
-        </div>
+  <div class="badge">HABIBI247</div>
 
-        <div class="match-card">
-            <h3>T20 CRICKET</h3>
-            <div class="teams">
-                <span>ENG 🏴</span>
-                <span class="vs">VS</span>
-                <span>PAK 🇵🇰</span>
-            </div>
-            <p>T20 International</p>
-            <p>Match preview and analysis</p>
-        </div>
+  <h1>Get Your ID Now</h1>
 
-        <div class="match-card">
-            <h3>TEST CRICKET</h3>
-            <div class="teams">
-                <span>SA 🇿🇦</span>
-                <span class="vs">VS</span>
-                <span>NZ 🇳🇿</span>
-            </div>
-            <p>Test Match</p>
-            <p>Match preview and analysis</p>
-        </div>
+  <p class="sub">
+    Fast auto website service with easy deposit support.
+    New users can start quickly through WhatsApp.
+  </p>
 
-    </div>
-</section>
+  <div class="features">
 
-<!-- CRICKET NEWS -->
-
-<section id="news">
-    <h2 class="section-title">📰 Latest Cricket Stories</h2>
-    <p class="section-description">
-        Discover cricket news, features and editorial stories.
-    </p>
-
-    <div class="news-grid">
-
-        <div class="news-card">
-            <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=700">
-            <div class="news-content">
-                <span class="category">CRICKET NEWS</span>
-                <h3>The Evolution of Modern Cricket</h3>
-                <p>
-                    Discover how modern cricket has changed through
-                    technology, new strategies and exciting formats.
-                </p>
-                <a class="read-more" href="#blog">Read Article →</a>
-            </div>
-        </div>
-
-        <div class="news-card">
-            <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=700">
-            <div class="news-content">
-                <span class="category">PLAYER STORIES</span>
-                <h3>What Makes a Great Cricket Captain?</h3>
-                <p>
-                    Leadership, decision making, team spirit and
-                    the ability to perform under pressure.
-                </p>
-                <a class="read-more" href="#blog">Read Article →</a>
-            </div>
-        </div>
-
-        <div class="news-card">
-            <img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=700">
-            <div class="news-content">
-                <span class="category">CRICKET ANALYSIS</span>
-                <h3>The Art of Batting and Bowling</h3>
-                <p>
-                    Learn about batting technique, bowling variations
-                    and the tactics behind successful cricket.
-                </p>
-                <a class="read-more" href="#blog">Read Article →</a>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<!-- PLAYERS -->
-
-<section class="players" id="players">
-    <h2 class="section-title">⭐ Cricket Legends & Players</h2>
-    <p class="section-description">
-        Celebrate famous players and their contribution to cricket.
-    </p>
-
-    <div class="player-grid">
-
-        <div class="player-card">
-            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300">
-            <h3>Batting Legends</h3>
-            <p>Technique, records and unforgettable innings.</p>
-        </div>
-
-        <div class="player-card">
-            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300">
-            <h3>Bowling Legends</h3>
-            <p>Fast bowling, spin and match-winning spells.</p>
-        </div>
-
-        <div class="player-card">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300">
-            <h3>Cricket Captains</h3>
-            <p>Leadership, strategy and team management.</p>
-        </div>
-
-    </div>
-</section>
-
-<!-- SPORTS BOOKS -->
-
-<section id="books">
-    <h2 class="section-title">📚 Cricket & Sports Books</h2>
-    <p class="section-description">
-        A reading corner for cricket fans, athletes and sports lovers.
-    </p>
-
-    <div class="book-grid">
-
-        <div class="book-card">
-            <div class="book-cover">THE ART OF CRICKET</div>
-            <h3>The Art of Cricket</h3>
-            <p>A guide to understanding cricket skills, tactics and technique.</p>
-        </div>
-
-        <div class="book-card">
-            <div class="book-cover" style="background:linear-gradient(135deg,#a52a2a,#301010)">
-                CRICKET HISTORY
-            </div>
-            <h3>History of Cricket</h3>
-            <p>Explore the history, iconic matches and evolution of cricket.</p>
-        </div>
-
-        <div class="book-card">
-            <div class="book-cover" style="background:linear-gradient(135deg,#174d8c,#06182e)">
-                SPORTS MINDSET
-            </div>
-            <h3>The Winning Mindset</h3>
-            <p>Discover discipline, motivation and mental strength in sports.</p>
-        </div>
-
-        <div class="book-card">
-            <div class="book-cover" style="background:linear-gradient(135deg,#b77a13,#3d2504)">
-                LEGENDS OF SPORT
-            </div>
-            <h3>Legends of Sport</h3>
-            <p>Stories about extraordinary athletes and sporting achievements.</p>
-        </div>
-
-    </div>
-</section>
-
-<!-- BLOG CONTENT -->
-
-<section class="blog-section" id="blog">
-
-    <h2 class="section-title">✍️ Cricket Blog & Articles</h2>
-    <p class="section-description">
-        Long-form sports content, cricket education and editorial features.
-    </p>
-
-    <div class="blog-grid">
-
-        <div>
-
-            <article class="blog-article">
-                <h3>1. The Beautiful Game of Cricket</h3>
-                <p>
-                    Cricket is more than a sport. It is a combination of
-                    skill, patience, teamwork and determination. Played
-                    across the world, cricket brings millions of people
-                    together through unforgettable matches and sporting
-                    rivalries.
-                </p>
-                <br>
-                <p>
-                    From traditional Test cricket to exciting T20
-                    competitions, the game continues to grow. Every format
-                    requires a different approach, and every player brings
-                    unique talent to the field.
-                </p>
-            </article>
-
-            <article class="blog-article">
-                <h3>2. How to Become a Better Batsman</h3>
-                <p>
-                    Good batting starts with a balanced stance, correct
-                    grip and excellent footwork. Players should practise
-                    regularly and develop the ability to read the ball
-                    early.
-                </p>
-                <br>
-                <p>
-                    Timing is one of the most important aspects of batting.
-                    Rather than relying only on power, a batsman must learn
-                    shot selection, concentration and patience.
-                </p>
-            </article>
-
-            <article class="blog-article">
-                <h3>3. The Science of Fast Bowling</h3>
-                <p>
-                    Fast bowling requires strength, coordination, rhythm
-                    and technical accuracy. Bowlers must understand their
-                    run-up, delivery stride and release point.
-                </p>
-                <br>
-                <p>
-                    Swing, seam movement, pace and variation can make a
-                    bowler difficult to face. Consistent training and
-                    proper recovery are essential for long-term performance.
-                </p>
-            </article>
-
-            <article class="blog-article">
-                <h3>4. Why Teamwork Matters in Cricket</h3>
-                <p>
-                    Cricket is a team sport where every role matters.
-                    Batsmen build partnerships, bowlers create pressure
-                    and fielders save valuable runs.
-                </p>
-                <br>
-                <p>
-                    Communication and trust help a team perform at its
-                    best. Strong teamwork can turn difficult situations
-                    into memorable victories.
-                </p>
-            </article>
-
-            <article class="blog-article">
-                <h3>5. The Future of World Cricket</h3>
-                <p>
-                    Technology, data analysis, broadcasting and new
-                    competitions are changing cricket. Fans can now
-                    follow games through digital platforms and access
-                    detailed statistics.
-                </p>
-                <br>
-                <p>
-                    The future of cricket will continue to combine
-                    tradition with innovation, attracting new generations
-                    of players and supporters.
-                </p>
-            </article>
-
-        </div>
-
-        <!-- SIDEBAR -->
-
-        <aside class="sidebar">
-            <h3>Popular Blog Categories</h3>
-            <a href="#news">Cricket News</a>
-            <a href="#players">Player Profiles</a>
-            <a href="#books">Sports Books</a>
-            <a href="#blog">Batting Techniques</a>
-            <a href="#blog">Bowling Techniques</a>
-            <a href="#blog">Cricket History</a>
-            <a href="#matches">Match Analysis</a>
-            <a href="#blog">Sports Motivation</a>
-        </aside>
-
-    </div>
-</section>
-
-<!-- NEWSLETTER -->
-
-<section class="newsletter">
-    <h2>Join Our Cricket Community!</h2>
-    <p>Subscribe for cricket stories, sports articles and blog updates.</p>
-
-    <form onsubmit="subscribe(event)">
-        <input type="email" id="email"
-               placeholder="Enter your email address" required>
-        <button type="submit">SUBSCRIBE</button>
-    </form>
-
-    <p id="message"></p>
-</section>
-
-<!-- CONTACT -->
-
-<section id="contact">
-    <h2 class="section-title">Contact Cricket World</h2>
-    <p class="section-description">
-        Have a cricket story, article idea or sports topic to share?
-    </p>
-
-    <div class="blog-article">
-        <h3>Get in Touch</h3>
-        <p>Email: hello@cricketworld.example</p>
-        <p>Website: www.cricketworld.example</p>
-        <p>We welcome sports writers, cricket fans and contributors.</p>
-    </div>
-</section>
-
-<!-- FOOTER -->
-
-<footer>
-    <div class="logo">🏏 CRICKET WORLD</div>
-
-    <div class="social">
-        <a href="#">Facebook</a>
-        <a href="#">Instagram</a>
-        <a href="#">YouTube</a>
-        <a href="#">Twitter</a>
+    <div class="feature">
+      Minimum Deposit: <span>₹100 Only</span>
     </div>
 
-    <p>© 2026 Cricket World Magazine. All Rights Reserved.</p>
-    <p>Sports News | Cricket Blogs | Books | Player Stories</p>
-</footer>
+    <div class="feature">
+      Welcome Bonus: <span>10%</span>
+    </div>
+
+    <div class="feature">
+      Habibi247 Signup:
+      <a
+        class="signup-btn"
+        href="https://habibi247.co/clk?src=YMFtLZxvb"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Sign Up with Habibi247
+      </a>
+    </div>
+
+    <div class="feature">
+      Quick Help:
+      <span>Deposit &amp; Withdrawal Support</span>
+    </div>
+
+  </div>
+
+  <div class="website-row">
+
+    <a
+      class="website"
+      href="https://habibi247.co/clk?src=YMFtLZxvb"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      🌐 https://habibi247.co/clk?src=YMFtLZxvb
+    </a>
+
+    <a
+      class="whatsapp-small"
+      href="https://wa.me/447873190819"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      💬 WhatsApp
+    </a>
+
+  </div>
+
+  <a
+    class="cta"
+    href="https://wa.me/447873190819?text=Hello%20I%20want%20new%20manual%20ID"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    📲 WhatsApp Now
+  </a>
+
+  <p class="trust">
+    ✅ Trusted Manual Support<br>
+    ✅ Simple Process<br>
+    ✅ Fast Response
+  </p>
+
+  <div class="footer">
+    18+ Only | Play Responsibly | Follow Your Local Laws | T&amp;C Apply
+  </div>
+
+</div>
+
+  </div>
+
+</div>
 
 <script>
-function subscribe(event) {
-    event.preventDefault();
+const bonusPopup = document.getElementById('bonusPopup');
+const bonusClose = document.getElementById('bonusClose');
 
-    const email = document.getElementById("email").value;
-
-    document.getElementById("message").innerHTML =
-        "Thank you for joining Cricket World!";
-
-    console.log("Subscription email:", email);
-
-    document.getElementById("email").value = "";
+function closeBonusPopup(){
+  bonusPopup.hidden = true;
 }
+
+bonusClose.addEventListener('click', closeBonusPopup);
+bonusPopup.addEventListener('click', (event) => {
+  if(event.target === bonusPopup) closeBonusPopup();
+});
+document.addEventListener('keydown', (event) => {
+  if(event.key === 'Escape') closeBonusPopup();
+});
 </script>
 
 </body>
